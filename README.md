@@ -58,8 +58,10 @@ Change every reference to Problem 6 with 7.
 Take note of the order that things are logged to the terminal. 
 To see this clearly, run both Problem 6 and 7 in the same file and watch as they log to the terminal.
 
-* Note: If you can't get either of problems 5 or 6 running, I'm happy to hand over the code so that you can have a look at what I'm trying to do.
 
+
+## Matt's notes
+* Note: If you can't get either of problems 5 or 6 running, I'm happy to hand over the code so that you can have a look at what I'm trying to do.
 
 * Some thoughts
 Now contrast that with the functions that we encountered in Problem 6. You can see that while in 6 the entire program stops to wait for the loop, in 7 the program continues on, and other code would have been run before finally logging that it actually fully finished for real, had escaped from the timeout, called the callback, and executed the callback code.
