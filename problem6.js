@@ -19,9 +19,9 @@ Take note of the timing and order that things are logged.
 console.log('Problem 6')
 console.time('problem-6')
 
-const looper = funct => {
+const looper = cb => {
   console.time('looper')
-  if (funct !== undefined) funct()
+  if (cb !== undefined) cb()
 }
 
 // Scenario 1 - looper without arguments
