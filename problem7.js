@@ -40,6 +40,12 @@ const timeouter = cb => {
   }, 6000)
 }
 
+/* Without callback */
+timeouter()
+console.log('Finished without callback')
+console.timeEnd('timeouter')
+
+/* With callback */
 timeouter(() => {
   console.log('Finished 7 in the callback')
   console.timeEnd('timeouter')
