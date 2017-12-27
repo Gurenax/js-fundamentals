@@ -26,7 +26,6 @@ console.timeEnd('looper')
 timeouter()
 console.log('Finished without callback')
 console.timeEnd('timeouter')
-
 console.log("==================")
 
 /* Problem 6 with callback */
@@ -38,13 +37,14 @@ for (let i = 0; i < 1000000000; i++) {
   // Do nothing
 }
 console.log('After loop!')
-
 console.log("After looper")
-console.log("==================")
 console.timeEnd('problem-6')
+console.log("==================")
+
+
+
 console.log('Problem 7')
 console.time('problem-7')
-
 
 /* Problem 7 with callback */
 timeouter(() => {
@@ -53,5 +53,5 @@ timeouter(() => {
 })
 
 console.log("After timeouter")
-console.log("==================")
 console.timeEnd('problem-7')
+console.log("==================")
