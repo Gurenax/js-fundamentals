@@ -1,5 +1,4 @@
 console.log('Problem 8')
-console.time('problem-8')
 
 const looperPromise = cb => {
   const promise = new Promise( (callThen, callCatch) => {
@@ -32,7 +31,7 @@ console.log('After loop 1!')
 console.timeEnd('looper')
 console.log("==================")
 
-
+// Scenario 2 - looper with arguments - Will provide data in .then()
 looperPromise(() => {
   console.log('Finished 8 in the promise')
   console.timeEnd('looper')
@@ -48,7 +47,3 @@ for (let i = 0; i < 1000000000; i++) {
   // Do nothing
 }
 console.log('After loop 2!')
-
-console.log("After looper")
-console.log("..now heading off to other parts of the program!")
-console.log("==================")
