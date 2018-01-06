@@ -5,6 +5,7 @@ const timeouterPromise = cb => {
     console.time('timeouter1')
     console.time('timeouter2')
     console.time('timeouter3')
+    console.time('timeouter4')
     if( cb === undefined ) {
       // cb function was not defined so return an error
       callCatch('Callback is undefined')
@@ -22,7 +23,7 @@ const timeouterPromise = cb => {
   return promise
 }
 
-/* Without callback */
+/* Without callback - Using regular promise */
 timeouterPromise()
   .then( data => {
     console.log('PROMISE 1 data:')
@@ -31,10 +32,13 @@ timeouterPromise()
   .catch(error => {
     console.error(`PROMISE 1 Error: ${error}`)
   })
+  .then( () => {
+    console.timeEnd('timeouter1')
+  })
 console.log('Finished without callback')
-console.timeEnd('timeouter1')
 
-/* With callback */
+
+/* With callback - Using regular promise */
 timeouterPromise(() => {
   console.log('Finished 9 in the promise')
   console.timeEnd('timeouter2')
@@ -47,16 +51,38 @@ timeouterPromise(() => {
     console.error(`PROMISE 2 Error: ${error}`)
   })
 
-/* Using async/await */
+/* With callback - Using async/await */
 const timeouterRequest = async() => {
-  data = await timeouterPromise( () => {
-    console.log('Finished 9 in the promise')
-    console.timeEnd('timeouter3')
-  })
-  console.log('PROMISE 3 data:')
-  data()
+  try {
+    data = await timeouterPromise( () => {
+      console.log('Finished 9 in the promise')
+      console.timeEnd('timeouter3')
+    })
+    console.log('PROMISE 3 data:')
+    data()
+  }
+  catch(error) {
+    console.error(`PROMISE 3 Error: ${error}`)
+  }
 }
 timeouterRequest()
+
+/* Without callback - Using async/await */
+const timeouterRequest2 = async() => {
+  try {
+    data = await timeouterPromise()
+    console.log('PROMISE 4 data:')
+    data()
+  }
+  catch(error) {
+    console.error(`PROMISE 4 Error: ${error}`)
+  }
+  finally {
+    console.timeEnd('timeouter4')
+  }
+}
+timeouterRequest2()
+
 
 // console.log("After timeouter")
 // console.log("..now heading off to other parts of the program!")
