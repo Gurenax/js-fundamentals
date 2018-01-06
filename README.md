@@ -81,3 +81,11 @@ This is a bit like in Problem 6 where the code continues after hitting the async
 How this actually works in the browser is a little complex, but this is a brilliant talk that gives you the flavour of this in a digestible form --
 https://www.youtube.com/watch?v=8aGhZQkoFbQ   
 (It's ok if you don't follow this fully - just get the general idea and you'll be ahead of most junior JS coders.)
+
+
+## Problem 8
+Here we will do something similar to the last couple of problems. What we will do is massage the previous two problems to make them into functions that return promises. Here I'm going to leave it a little open for now and have people make an attempt. I can provide more of a guide if needed.     
+First take Problem 6, keep the same functionality but use promises instead of callbacks. It should have the blocking loop, but when called the data should be accessible in the .then(). You can feel free to pass some elementary data to see things in action (let x = 100 or some such). (That is, you will have a function that returns a promise, and in the body of that promise I want you to run the loop. You can also define a variable in the body of the function and pass that through when you resolve.)    
+
+## Problem 9
+Here you need to do the same thing, but use the code from question 7 to get the job done. This will be asynchronous code with promises. (Here you will do the same as in 8, but resolve within the timeout function.)
